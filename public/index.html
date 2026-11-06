@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI วิเคราะห์สภาพจากรูป</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <h1>AI วิเคราะห์สภาพจากรูป</h1>
+      <p class="subtitle">อัปโหลดรูป วิเคราะห์สภาพ และสร้างข้อความสำหรับ Facebook</p>
+
+      <label class="upload" for="imageInput">
+        <span>เลือกรูป JPG หรือ PNG</span>
+        <input id="imageInput" type="file" accept="image/jpeg,image/png,image/webp" />
+      </label>
+
+      <img id="preview" class="preview hidden" alt="รูปที่เลือก" />
+
+      <label for="extraDetails">ข้อมูลเพิ่มเติม เช่น ประเภททรัพย์ จุดเด่น ราคา หรือทำเล</label>
+      <textarea id="extraDetails" rows="3" placeholder="ตัวอย่าง: คอนโด 2 ห้องนอน ใกล้ BTS ราคา 3.5 ล้านบาท"></textarea>
+
+      <button id="analyzeBtn" type="button">วิเคราะห์สภาพและเขียนโพสต์</button>
+      <p id="status" class="status" aria-live="polite"></p>
+    </section>
+
+    <section id="resultCard" class="card hidden">
+      <h2>ผลวิเคราะห์สภาพ</h2>
+      <div id="analysisResult" class="result"></div>
+
+      <div class="heading-row">
+        <h2>ข้อความเชิญชวนสำหรับ Facebook</h2>
+        <button id="copyBtn" class="secondary" type="button">คัดลอก</button>
+      </div>
+      <textarea id="facebookPost" rows="10" readonly></textarea>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
